@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float attackRecharge;
     public float effectiveRange;
     public float detectionRange;
-    
+
 
     public GameObject Player;
     protected Rigidbody2D enemyRb;
@@ -137,9 +137,9 @@ public class EnemyBehaviour : MonoBehaviour
             float angleDeg = Mathf.Rad2Deg * angleRad;
             Quaternion attackRotation = Quaternion.Euler(0, 0, angleDeg - 90);
 
-            yield return new WaitForSeconds(timeToDelay);
+            yield return new WaitForSeconds(timeToDelay / gameManager.timeFlow);
             AttackContents(directionOfPlayer, attackRotation);
-            yield return new WaitForSeconds(timeToRecharge);
+            yield return new WaitForSeconds(timeToRecharge / gameManager.timeFlow);
             isAttacking = false;
         }
 
@@ -149,5 +149,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         Debug.Log("No attack created in override AttackContents. Put something here!");
     }
+
 }
 
