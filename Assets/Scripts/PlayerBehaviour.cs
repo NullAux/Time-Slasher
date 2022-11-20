@@ -136,6 +136,14 @@ public class PlayerBehaviour : MonoBehaviour
         canBeHit = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyAttack") && canBeHit)
+        {
+            DamagePlayer(collision.gameObject.transform.parent.root.gameObject.GetComponent<EnemyBehaviour>().attackDamage);
+        }
+    }
+
     //Temporarily slow down the flow of time. Active until player runs out of time resource or releases button. Delay on recharge after use.
     void SlowTime()
     {

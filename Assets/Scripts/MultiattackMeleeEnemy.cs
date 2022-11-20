@@ -35,7 +35,7 @@ public class MultiattackMeleeEnemy : MeleeEnemyBehaviour
             enemyRb.velocity = directionOfPlayer * attackVelocity * gameManager.timeFlow;
             yield return new WaitForSeconds(lungeCompletionTime / gameManager.timeFlow);
             enemyRb.velocity = new Vector2(0, 0);
-            Destroy(Instantiate(meleeProjectile, transform.position + (directionOfPlayer.normalized * meleeAttackRange), attackRotation), 0.1f);
+            Destroy(Instantiate(meleeProjectile, transform.position + (directionOfPlayer.normalized * meleeAttackRange), attackRotation, gameObject.transform), 0.1f);
 
             yield return new WaitForSeconds(delayBetweenAttacks / gameManager.timeFlow);
         }

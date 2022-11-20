@@ -25,6 +25,7 @@ public class EnemyBehaviour : MonoBehaviour
     protected bool isAttacking = false;//prevents movement and by extension attacking before the current attack is done
 
     protected int layerMask;
+    public int attackDamage;
 
 
     // Start is called before the first frame update
