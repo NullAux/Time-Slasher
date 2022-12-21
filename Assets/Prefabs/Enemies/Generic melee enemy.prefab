@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfbceb4975d208348816df90ea680df7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,15 +103,15 @@ MonoBehaviour:
   moveSpeed: 2
   attackDelay: 1
   attackRecharge: 0.5
-  effectiveRange: 1
+  effectiveRange: 3
   detectionRange: 5
   Player: {fileID: 0}
   gameManager: {fileID: 0}
+  attackDamage: 1
   meleeProjectile: {fileID: 7835275332562363600, guid: e2ee4c67c15445342a81ba4c29b64b79, type: 3}
-  attackMovement: 0.5
   meleeAttackRange: 1
   lungeCompletionTime: 0.1
-  attackVelocity: 30
+  attackVelocity: 5
 --- !u!50 &1557799000712988866
 Rigidbody2D:
   serializedVersion: 4
@@ -146,16 +146,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.020284414, y: -0.028398514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.55, y: 2.55}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.3550086, y: 2.3225536}
   m_EdgeRadius: 0

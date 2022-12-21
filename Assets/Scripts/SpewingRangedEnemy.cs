@@ -33,10 +33,19 @@ public class SpewingRangedEnemy : GenericRangedEnemy
             float randomOffsetY = Random.Range(-100, 100);
             Vector3 randomAngle = new Vector3(randomOffsetX, randomOffsetY, 0).normalized * randomnessWeighting;
 
+            /*
+            float angleRad = Mathf.Atan2(directionOfPlayer.y, directionOfPlayer.x);
+            float angleDeg = Mathf.Rad2Deg * angleRad;
+            Quaternion RandomizedAttackRotation = Quaternion.Euler(0, 0, angleDeg - 90);
+            */
 
+            Quaternion randomizedAttackDirection = Quaternion.Euler(randomOffsetX, randomOffsetY, 0).normalized;
 
-            GameObject projectile = Instantiate(rangedProjectile, transform.position + directionOfPlayer.normalized, attackRotation, gameObject.transform);
-            projectile.GetComponentInChildren<Rigidbody2D>().velocity = (directionOfPlayer.normalized + randomAngle) * projectileVelocity;
+            GameObject projectile = Instantiate(rangedProjectile, transform.position + directionOfPlayer.normalized, attackRotation * randomizedAttackDirection, gameObject.transform);
+            //projectile.GetComponentInChildren<Rigidbody2D>().rotation = (directionOfPlayer.normalized + randomAngle);
+
+            //projectile.GetComponent<ProjectileBehaviour>().RandomRotate(randomAngle);
+            projectile.GetComponentInChildren<ProjectileBehaviour>().projectileSpeed = projectileVelocity;
             Destroy(projectile, projectileExpiryTime);
 
             yield return new WaitForSeconds(delay);

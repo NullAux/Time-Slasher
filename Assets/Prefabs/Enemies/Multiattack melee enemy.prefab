@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6bda642f3e33c4f4c8a4101255616384, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,14 +125,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.55, y: 2.55}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &9114839864533108991
 MonoBehaviour:
@@ -150,13 +150,14 @@ MonoBehaviour:
   moveSpeed: 2
   attackDelay: 0.5
   attackRecharge: 1
-  effectiveRange: 1
+  effectiveRange: 3
   detectionRange: 5
   Player: {fileID: 0}
   gameManager: {fileID: 0}
+  attackDamage: 0
   meleeProjectile: {fileID: 7835275332562363600, guid: e2ee4c67c15445342a81ba4c29b64b79, type: 3}
   meleeAttackRange: 1
   lungeCompletionTime: 0.1
-  attackVelocity: 30
+  attackVelocity: 4
   delayBetweenAttacks: 0.05
   numberOfAttacks: 3

@@ -24,7 +24,8 @@ public class GenericRangedEnemy : EnemyBehaviour
     protected override void AttackContents(Vector3 directionOfPlayer, Quaternion attackRotation)
     {
         GameObject projectile = Instantiate(rangedProjectile, transform.position + directionOfPlayer.normalized, attackRotation, gameObject.transform);
-        projectile.GetComponentInChildren<Rigidbody2D>().velocity = directionOfPlayer.normalized * projectileVelocity;
+        projectile.GetComponentInChildren<ProjectileBehaviour>().projectileSpeed = projectileVelocity;
+
         Destroy(projectile, projectileExpiryTime);
 
     }
