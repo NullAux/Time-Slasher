@@ -27,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
     bool canRechargeTimeResource = true;
 
     Rigidbody2D playerRb;
+    SpriteRenderer m_SpriteRenderer;
 
     public GameObject swordAttack;
     public GameManager gameManager;
@@ -35,6 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         playerRb = gameObject.GetComponent<Rigidbody2D>();
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -127,12 +129,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         canBeHit = false;
         hitPoints -= damage;
+        m_SpriteRenderer.color = new Color(0.5f, 0, 0);
         StartCoroutine(beHitCooldown(invincibilityTime));
     }
 
     IEnumerator beHitCooldown(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
+        m_SpriteRenderer.color = Color.red;
         canBeHit = true;
     }
 
